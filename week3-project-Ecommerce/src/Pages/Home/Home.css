@@ -1,0 +1,36 @@
+.swiper {
+  width: 100%;
+}
+
+
+
+.autoplay-progress {
+  display: none;
+ 
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+.posterImage {
+  max-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.posterImage > img {
+  display: block;
+  width: 100%;
+}
