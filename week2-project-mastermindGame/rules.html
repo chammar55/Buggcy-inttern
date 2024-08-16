@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rules</title>
+  </head>
+  <body
+    style="
+      background-color: antiquewhite;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Outfit, sans-sarif;
+    "
+  >
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+      "
+    >
+      <h1 style="margin: 0">Rules of The Game</h1>
+      <ul
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 5px;
+          font-size: 18px;
+        "
+      >
+        <li>
+          The computer picks a sequence of colors. The number of colors is the
+          code length.
+        </li>
+        <li>
+          The objective of the game is to guess the exact positions of the
+          colors in the computer's sequence.
+        </li>
+        <li>
+          By default, a color can be used multiple time in a code sequence. If
+          you start a new game with the 'Allow duplicates' unchecked, then any
+          color can be used one time in the code sequence.
+        </li>
+        <li>
+          After filling a line with your guesses and clicking on the 'Check'
+          button, the computer responses with the result of your guess.
+        </li>
+        <li>
+          For each color in your guess that is in the correct color and correct
+          position in the code sequence, the computer display a small green
+          color on the right side of the current guess.
+        </li>
+        <li>
+          For each color in your guess that is in the correct color but is NOT
+          in the correct position in the code sequence, the computer display a
+          small yellow color on the right side of the current guess.
+        </li>
+        <li>
+          For each color in your guess that is not the correct, the computer
+          displays a nothing on the right side of the guess
+        </li>
+        <li>
+          You win the game when you manage to guess all the colors in the code
+          sequence and when they all in the right position.
+        </li>
+      </ul>
+    </div>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+      "
+    >
+      <h1 style="margin: 0">How to play the game</h1>
+      <ul
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 5px;
+          font-size: 18px;
+        "
+      >
+        <li>
+          Start a new game by clicking on the 'Start Game' button. If you wish
+          to change the default game parameters, you may change the 'Allow
+          duplicates' field before clicking on the 'Start Game' button.
+        </li>
+        <li>
+          To start filling a line, you must first select a color at the top of
+          the table by clicking on it. After selecting a color you can just put
+          it in the current guess line.
+        </li>
+        <li>
+          After filling a whole line, you can still change your selection before
+          asking the computer to respond to your guess. When you're satisfied
+          with your guess, just click on the 'Check' button and get the computer
+          response.
+        </li>
+        <li>You have 10 attempts to guess the code sequence. Good Luck!</li>
+      </ul>
+    </div>
+    <a
+      href="index.html "
+      style="
+        background-color: white;
+        padding: 4px 8px;
+        border: none;
+        border-radius: 5px;
+        font-size: 32px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      "
+      >Go Back</a
+    >
+  </body>
+</html>

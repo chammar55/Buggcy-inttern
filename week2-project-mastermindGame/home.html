@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Mastermind Game</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <div class="gameContainer">
+      <h1>Mastermind Game</h1>
+      <!-- <div class="showRules"><p>Show Rules</p></div>
+      <div class="rules"><p>Try to guess the pattern, in both order and color, within ten turns. After submitting a row, a small green squared is show for each circle in a correct position and color. A yellow square indicates the existence of a correct color in an incorrect position.</p></div> -->
+      <div class="circlesContainer ">
+
+      <div class="circleDiv sticky-div" id="stickyDiv">
+        <div class="circle color1" onclick="selectColor('red')"></div>
+        <div class="circle color2" onclick="selectColor('green')"></div>
+        <div class="circle color3" onclick="selectColor('blue')"></div>
+        <div class="circle color4" onclick="selectColor('yellow')"></div>
+        <div class="circle color5" onclick="selectColor('purple')"></div>
+      </div>
+    </div>
+    <label class="allowDuplicate" style="visibility: hidden">
+      <input type="checkbox" id="toggleDuplicates" checked /> Allow Duplicates
+    </label>
+    <div class="rows-container">
+      <!-- Circle container 1 -->
+      <div class="circlesContainer row1 currentRow" id="row1">
+        <p>1.</p>
+        <div class="circleDiv">
+          <div class="circle" onclick="applyColor(this, 0)"></div>
+          <div class="circle" onclick="applyColor(this, 1)"></div>
+          <div class="circle" onclick="applyColor(this, 2)"></div>
+          <div class="circle" onclick="applyColor(this, 3)"></div>
+        </div>
+        <p class="checkBtn" onclick="clickBtn(1)">check</p>
+        <div class="masterReview masterReview1">
+          <div class="review review1"></div>
+          <div class="review review2"></div>
+          <div class="review review3"></div>
+          <div class="review review4"></div>
+        </div>
+      </div>
+      <!-- Circle container 2 -->
+      <div class="circlesContainer disabled row2" id="row2">
+        <p>2.</p>
+        <div class="circleDiv">
+          <div class="circle" onclick="applyColor(this, 0)"></div>
+          <div class="circle" onclick="applyColor(this, 1)"></div>
+          <div class="circle" onclick="applyColor(this, 2)"></div>
+          <div class="circle" onclick="applyColor(this, 3)"></div>
+        </div>
+        <p class="checkBtn" onclick="clickBtn(2)">check</p>
+        <div class="masterReview masterReview2">
+          <div class="review review1"></div>
+          <div class="review review2"></div>
+          <div class="review review3"></div>
+          <div class="review review4"></div>
+        </div>
+      </div>
+      <!-- Circle container 3 -->
+      <div class="circlesContainer disabled row3" id="row3">
+        <p>3.</p>
+        <div class="circleDiv">
+          <div class="circle" onclick="applyColor(this, 0)"></div>
+          <div class="circle" onclick="applyColor(this, 1)"></div>
+          <div class="circle" onclick="applyColor(this, 2)"></div>
+          <div class="circle" onclick="applyColor(this, 3)"></div>
+        </div>
+        <p class="checkBtn" onclick="clickBtn(3)">check</p>
+        <div class="masterReview masterReview3">
+          <div class="review review1"></div>
+          <div class="review review2"></div>
+          <div class="review review3"></div>
+          <div class="review review4"></div>
+        </div>
+      </div>
+      <!-- Circle container 4 -->
+      <div class="circlesContainer disabled row4" id="row4">
+        <p>4.</p>
+        <div class="circleDiv">
+          <div class="circle" onclick="applyColor(this, 0)"></div>
+          <div class="circle" onclick="applyColor(this, 1)"></div>
+          <div class="circle" onclick="applyColor(this, 2)"></div>
+          <div class="circle" onclick="applyColor(this, 3)"></div>
+        </div>
+        <p class="checkBtn" onclick="clickBtn(4)">check</p>
+        <div class="masterReview masterReview4">
+          <div class="review review1"></div>
+          <div class="review review2"></div>
+          <div class="review review3"></div>
+          <div class="review review4"></div>
+        </div>
+      </div>
+      <!-- Circle container 5 -->
+      <div class="circlesContainer disabled row5" id="row5">
+        <p>5.</p>
+        <div class="circleDiv">
+          <div class="circle" onclick="applyColor(this, 0)"></div>
+          <div class="circle" onclick="applyColor(this, 1)"></div>
+          <div class="circle" onclick="applyColor(this, 2)"></div>
+          <div class="circle" onclick="applyColor(this, 3)"></div>
+        </div>
+        <p class="checkBtn" onclick="clickBtn(5)">check</p>
+        <div class="masterReview masterReview5">
+          <div class="review review1"></div>
+          <div class="review review2"></div>
+          <div class="review review3"></div>
+          <div class="review review4"></div>
+        </div>
+      </div>
+      <!-- Circle container 6 -->
+      <div class="circlesContainer disabled row6" id="row6">
+        <p>6.</p>
+        <div class="circleDiv">
+          <div class="circle" onclick="applyColor(this, 0)"></div>
+          <div class="circle" onclick="applyColor(this, 1)"></div>
+          <div class="circle" onclick="applyColor(this, 2)"></div>
+          <div class="circle" onclick="applyColor(this, 3)"></div>
+        </div>
+        <p class="checkBtn" onclick="clickBtn(6)">check</p>
+        <div class="masterReview masterReview6">
+          <div class="review review1"></div>
+          <div class="review review2"></div>
+          <div class="review review3"></div>
+          <div class="review review4"></div>
+        </div>
+      </div>
+      <!-- Circle container 7 -->
+      <div class="circlesContainer disabled row7" id="row7">
+        <p>7.</p>
+        <div class="circleDiv">
+          <div class="circle" onclick="applyColor(this, 0)"></div>
+          <div class="circle" onclick="applyColor(this, 1)"></div>
+          <div class="circle" onclick="applyColor(this, 2)"></div>
+          <div class="circle" onclick="applyColor(this, 3)"></div>
+        </div>
+        <p class="checkBtn" onclick="clickBtn(7)">check</p>
+        <div class="masterReview masterReview7">
+          <div class="review review1"></div>
+          <div class="review review2"></div>
+          <div class="review review3"></div>
+          <div class="review review4"></div>
+        </div>
+      </div>
+      <!-- Circle container 8 -->
+      <div class="circlesContainer disabled row8" id="row8">
+        <p>8.</p>
+        <div class="circleDiv">
+          <div class="circle" onclick="applyColor(this, 0)"></div>
+          <div class="circle" onclick="applyColor(this, 1)"></div>
+          <div class="circle" onclick="applyColor(this, 2)"></div>
+          <div class="circle" onclick="applyColor(this, 3)"></div>
+        </div>
+        <p class="checkBtn" onclick="clickBtn(8)">check</p>
+        <div class="masterReview masterReview8">
+          <div class="review review1"></div>
+          <div class="review review2"></div>
+          <div class="review review3"></div>
+          <div class="review review4"></div>
+        </div>
+      </div>
+      <!-- Circle container 9 -->
+      <div class="circlesContainer disabled row9" id="row9">
+        <p>9.</p>
+        <div class="circleDiv">
+          <div class="circle" onclick="applyColor(this, 0)"></div>
+          <div class="circle" onclick="applyColor(this, 1)"></div>
+          <div class="circle" onclick="applyColor(this, 2)"></div>
+          <div class="circle" onclick="applyColor(this, 3)"></div>
+        </div>
+        <p class="checkBtn" onclick="clickBtn(9)">check</p>
+        <div class="masterReview masterReview9">
+          <div class="review review1"></div>
+          <div class="review review2"></div>
+          <div class="review review3"></div>
+          <div class="review review4"></div>
+        </div>
+      </div>
+      <!-- Circle container 10 -->
+      <div class="circlesContainer disabled row10" id="row10">
+        <p>10.</p>
+        <div class="circleDiv row10-adjust">
+          <div class="circle" onclick="applyColor(this, 0)"></div>
+          <div class="circle" onclick="applyColor(this, 1)"></div>
+          <div class="circle" onclick="applyColor(this, 2)"></div>
+          <div class="circle" onclick="applyColor(this, 3)"></div>
+        </div>
+        <p class="checkBtn row10-adjust" onclick="clickBtn(10)">check</p>
+        <div class="masterReview masterReview10 row10-adjust">
+          <div class="review review1"></div>
+          <div class="review review2"></div>
+          <div class="review review3"></div>
+          <div class="review review4"></div>
+        </div>
+      </div>
+    </div>
+    <div class="solution">
+      <p>Solution</p>
+      <div class="circlesContainer">
+        <div class="circleDiv">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+    <div style='display: flex; gap: 3px;'>
+
+      <div class="result">
+        <p class="youLost">You Lost :(</p>
+        <p class="youWin">You Win :)</p>
+      </div>
+      
+      <p class="playAgain">Play Again</p>
+    </div>
+
+   
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,168 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  /* background-color: #ffffff; */
+  background-color: antiquewhite;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Sticy Navbar************************************ */
+/* .sticky-div {
+  padding: 10px;
+
+  text-align: center;
+  margin-top: 10px 0px;
+}
+.sticky {
+  position: fixed;
+  transform: translate(-50%, -174%);
+  z-index: 999; 
+} */
+/* End of Sticy Navbar************************************ */
+
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  h1 {
+    font-size: 12px;
+  }
+}
+.showRules {
+  cursor: pointer;
+  background-color: white;
+  padding: 4px;
+  border-radius: 5px;
+}
+.rules {
+  width: 450px;
+  /* display: none; */
+  background-color: white;
+  padding: 4px;
+  border-radius: 5px;
+}
+.color1 {
+  background-color: red;
+}
+.color2 {
+  background-color: green;
+}
+.color3 {
+  background-color: blue;
+}
+.color4 {
+  background-color: yellow;
+}
+.color5 {
+  background-color: purple;
+}
+.currentRow {
+  background-color: rgba(255, 255, 255, 0.479);
+}
+.rows-container {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-30px);
+}
+.circlesContainer {
+  display: flex;
+  gap: 5px;
+  /* margin-bottom: 20px; */
+  border: 1px solid black;
+  padding: 2px;
+  /* margin-bottom: 10px; */
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6px;
+  }
+}
+.row10-adjust {
+  transform: translateX(-3px);
+}
+
+.allowDuplicate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  input {
+    width: 14px;
+    height: 14px;
+  }
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.circleDiv {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.checkBtn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.circle {
+  width: 12px; /* Diameter of the circle */
+  height: 12px; /* Diameter of the circle */
+  border-radius: 50%; /* Makes the shape circular */
+
+  border: 1px solid black;
+  cursor: pointer;
+}
+.masterReview {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.review {
+  width: 2px;
+  height: 2px;
+  border: 1px solid black;
+}
+
+.youLost {
+  background-color: red;
+}
+.youWin {
+  background-color: green;
+}
+.youWin,
+.youLost {
+  display: none;
+  color: white;
+  padding: 4px 6px;
+  border-radius: 5px;
+  font-size: 10px;
+  transform: translateY(-30px);
+}
+.playAgain {
+  display: none;
+  cursor: pointer;
+  font-size: 10px;
+  background-color: white;
+  padding: 4px 6px;
+  border-radius: 5px;
+  transform: translateY(-30px);
+}
+
+.solution {
+  transform: translateY(-30px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  font-size: 8px;
+}

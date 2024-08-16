@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css  " />
+    <title>Wellcome</title>
+  </head>
+  <body>
+    <main>
+      <h1 class="wellcome">Wellcome</h1>
+      <h1 class="MastermindGame">Mastermind Game</h1>
+      <label class="allowDuplicate">
+        <input type="checkbox" id="toggleDuplicates" checked /> Allow Duplicates
+      </label>
+      <a href="home.html" class="playNow">Play Now</a>
+      <a
+        href="rules.html"
+        style="
+          background-color: white;
+          padding: 4px 6px;
+          border: none;
+          border-radius: 5px;
+          font-size: 12px;
+          text-decoration: none;
+          color: black;
+        "
+      >
+        Rules
+      </a>
+    </main>
+    <script>
+      // Store alowDublicate on local Storage ***************************************************
+      const storedValue = localStorage.getItem("allowDuplicates");
+      let allowDuplicates =
+        storedValue === null ? true : JSON.parse(storedValue);
+      document.querySelector("#toggleDuplicates").checked = allowDuplicates;
+
+      document
+        .querySelector("#toggleDuplicates")
+        .addEventListener("change", function () {
+          allowDuplicates = this.checked;
+          localStorage.setItem(
+            "allowDuplicates",
+            JSON.stringify(allowDuplicates)
+          );
+        });
+    </script>
+  </body>
+</html>
